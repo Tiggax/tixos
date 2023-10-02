@@ -60,6 +60,7 @@
       nushell
       starship
       git
+      gitui
     #  thunderbird
     ];
   };
