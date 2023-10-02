@@ -11,37 +11,13 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = ["ntfs" ];
   networking.hostName = "tixos"; # Define your hostname.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
  
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Ljubljana";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "sl_SI.UTF-8";
-    LC_IDENTIFICATION = "sl_SI.UTF-8";
-    LC_MEASUREMENT = "sl_SI.UTF-8";
-    LC_MONETARY = "sl_SI.UTF-8";
-    LC_NAME = "sl_SI.UTF-8";
-    LC_NUMERIC = "sl_SI.UTF-8";
-    LC_PAPER = "sl_SI.UTF-8";
-    LC_TELEPHONE = "sl_SI.UTF-8";
-    LC_TIME = "sl_SI.UTF-8";
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -49,18 +25,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "si";
-    xkbVariant = "";
-  };
-
-  # Configure console keymap
-  console.keyMap = "slovene";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -100,8 +64,6 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
