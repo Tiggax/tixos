@@ -61,6 +61,8 @@
       starship
       git
       gitui
+      discord
+      steam
     #  thunderbird
     ];
   };
