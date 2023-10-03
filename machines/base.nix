@@ -1,11 +1,26 @@
 { inputs, lib, pkgs, ... }:
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      # creates links between same files, reduces space :)
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
+  };
   nixpkgs.config.allowUnfree = true;
 
   boot = {
      loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 10;
+      };
+      
       efi.canTouchEfiVariables = true;
     };
     supportedFilesystems = ["ntfs"];
