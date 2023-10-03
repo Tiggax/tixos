@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # ../users/tiggax.nix
+      ../machines/pc/tixie.nix
     ];
 
   # Bootloader.
@@ -63,6 +65,7 @@
       gitui
       discord
       steam
+      nil
     #  thunderbird
     ];
   };
