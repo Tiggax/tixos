@@ -1,6 +1,6 @@
 {config, lib, pkgs, modulesPath, ... }:
 {
-  filesystems = {
+  fileSystems = {
     "/mnt/Data" = {
       label = "Data";
       fsType = "ntfs";
