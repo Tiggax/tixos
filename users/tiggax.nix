@@ -7,7 +7,7 @@
     enable = true;
     userName = "Tilen Gimpelj";
     userEmail = "66419530+Tiggax@users.noreply.github.com";
-  }
+  };
   home.packages = with pkgs; [
     gitui
 

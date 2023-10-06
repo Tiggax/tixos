@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
       # ../users/tiggax.nix
       ../machines/pc/tixie.nix
+      ../pkgs/openssh.nix
+      ../games/steam
     ];
 
   # Bootloader.
@@ -64,7 +66,10 @@
       git
       gitui
       discord
+      
+      lutris
       steam
+      
       nil
     #  thunderbird
     ];
