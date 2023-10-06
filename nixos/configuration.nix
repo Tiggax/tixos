@@ -12,6 +12,7 @@
       ../machines/pc/tixie.nix
       ../pkgs/openssh.nix
       ../games/steam
+      ../printers/Firma
     ];
 
   # Bootloader.
