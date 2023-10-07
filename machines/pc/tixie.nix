@@ -10,4 +10,7 @@
       fsType = "ext4";
     };
   };
+
+  # Logitech G502 X mouse config
+  environment.systemPackages = with pkgs; [ solaar piper ];
 }
