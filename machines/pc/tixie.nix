@@ -13,4 +13,8 @@
 
   # Logitech G502 X mouse config
   environment.systemPackages = with pkgs; [ solaar piper ];
+hardware.logitech.wireless = {
+  enable = true;
+  enableGraphical = true;
+};
 }
