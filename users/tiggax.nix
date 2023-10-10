@@ -12,7 +12,7 @@
     gitui
 
     helix
-    nushell
+    nushellFull
     starship
   
     nil

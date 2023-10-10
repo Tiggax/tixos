@@ -63,7 +63,7 @@
       firefox
       kate
       helix
-      nushell
+      nushellFull
       starship
       git
       gitui
@@ -81,7 +81,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nushell
+    nushellFull
     helix
     git
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
