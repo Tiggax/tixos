@@ -13,6 +13,7 @@
       ../pkgs/openssh.nix
       ../games/steam
       ../printers/Firma
+      ../development/rust
     ];
 
   # Bootloader.
