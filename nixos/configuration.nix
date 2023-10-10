@@ -12,6 +12,7 @@
       ../machines/pc/tixie.nix
       ../pkgs/openssh.nix
       ../games/steam
+      ../games/minecraft
       ../printers/Firma
       ../development/rust
     ];

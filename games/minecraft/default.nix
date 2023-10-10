@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  enviroment.systemPackages = [
-    pkgs.atlauncher
+  environment.systemPackages = with pkgs; [
+    prismlauncher
   ];
 }
