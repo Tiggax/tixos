@@ -46,3 +46,33 @@ machine specific presets: graphics, wifi, etc...
 the repo will evolve while i get the grasp of the system
 
 
+---
+
+
+
+# TODO 
+
+[ ] development flakes for languages of:
+
+  [~] Rust
+  
+  [ ] Java
+  
+  [ ] Python (and other conda envs)
+  
+  [ ] Nushell (nuls, etc..)
+  
+[~] home-manager
+
+  [ ] nushell
+  
+  [ ] helix
+  
+  [ ] ssh
+  
+  [ ] git
+  
+  [ ] ...
+  
+[ ] todo
+
