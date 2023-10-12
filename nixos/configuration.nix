@@ -14,7 +14,6 @@
       ../games/steam
       ../games/minecraft
       ../printers/Firma
-      ../development/rust
     ];
 
   # Bootloader.
