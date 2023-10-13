@@ -52,27 +52,27 @@ the repo will evolve while i get the grasp of the system
 
 # TODO 
 
-[ ] development flakes for languages of:
+- [ ] development flakes for languages of:
 
-  [~] Rust
+    - [ ] Rust
   
-  [ ] Java
+    - [ ] Java
   
-  [ ] Python (and other conda envs)
+    - [ ] Python (and other conda envs)
   
-  [ ] Nushell (nuls, etc..)
+    - [ ] Nushell (nuls, etc..)
   
-[~] home-manager
+- [ ] home-manager
 
-  [ ] nushell
+    - [ ] nushell
   
-  [ ] helix
+    - [ ] helix
   
-  [ ] ssh
+    - [ ] ssh
   
-  [ ] git
+    - [ ] git
   
-  [ ] ...
+    - [ ] ...
   
-[ ] todo
+- [ ] todo
 
