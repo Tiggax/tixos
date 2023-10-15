@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  imports = [./kdeconnect.nix];
+
 services.xserver = {
   enable = true;
   displayManager.sddm.enable = true;
@@ -17,7 +19,4 @@ services.xserver = {
     pulse.enable = true;
   };
 
-  environment.systemPackages = with pkgs;[
-    libsForQt5.kdeconnect-kde # requre bluetooth
-  ];
 }
