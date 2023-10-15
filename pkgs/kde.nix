@@ -18,6 +18,6 @@ services.xserver = {
   };
 
   environment.systemPackages = with pkgs;[
-    libsForQt5.kdeconnect-kde
+    libsForQt5.kdeconnect-kde # requre bluetooth
   ];
 }

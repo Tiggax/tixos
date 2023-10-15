@@ -1,4 +1,4 @@
-{config, lib, pkgs, modulesPath, ... }:
+{ pkgs, ... }:
 {
   fileSystems = {
     "/mnt/Data" = {
@@ -13,8 +13,12 @@
 
   # Logitech G502 X mouse config
   environment.systemPackages = with pkgs; [ solaar piper ];
-hardware.logitech.wireless = {
-  enable = true;
-  enableGraphical = true;
-};
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
+  };
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 }
