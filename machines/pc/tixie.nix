@@ -16,19 +16,14 @@
     solaar 
     piper
   ];
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical = true;
-  };
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  # AMD GPU
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "amdgpu" ];
+  hardware = {
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 }
