@@ -53,6 +53,8 @@
       
       lutris
       steam
+
+      popcorntime
       
       nil
     #  thunderbird
@@ -66,6 +68,8 @@
     nushellFull
     helix
     git
+    tree
+    mpv
 
     krita
   ];
