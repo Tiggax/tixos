@@ -13,6 +13,7 @@
       # ../users/tiggax.nix
       ../machines/pc/tixie.nix
       ../pkgs/openssh.nix
+      ../pkgs/kdenlive.nix
       ../games
       ../games/steam
       ../games/minecraft
