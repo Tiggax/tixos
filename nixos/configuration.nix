@@ -44,7 +44,6 @@
     packages = with pkgs; [
       firefox
       kate
-      kdenlive
       helix
       nushellFull
       starship
