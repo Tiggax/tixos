@@ -51,6 +51,7 @@
       git
       gitui
       discord
+      yazi
       
       lutris
       steam
