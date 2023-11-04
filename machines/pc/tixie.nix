@@ -26,4 +26,13 @@
       powerOnBoot = true;
     };
   };
+networking = {
+  nftables.enable = true;
+  firewall = {
+    enable = true;
+    allowedTCPPorts = [80 505 34025];
+  };
+};
+
+boot.initrd.kernelModules = [ "amdgpu" ];
 }
