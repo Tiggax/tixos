@@ -5,4 +5,6 @@
   environment.systemPackages = with pkgs;[
     blender-hip
   ];
+
+  # boot.initrd.kernelModules = [ "amdgpu" ]; # This should maybe be better in hardware.
 }
