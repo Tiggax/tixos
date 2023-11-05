@@ -6,8 +6,9 @@
     blender-hip
   ];
 
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
   # boot.initrd.kernelModules = [ "amdgpu" ]; # This should maybe be better in hardware.
+  hardware.opengl.extraPackages = with pkgs; [
+    rocm-opencl-icd
+    rocm-opencl-runtime
+  ];
 }
