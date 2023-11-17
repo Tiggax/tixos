@@ -14,6 +14,7 @@
       ../machines/pc/tixie.nix
       ../pkgs/openssh.nix
       ../pkgs/kdenlive.nix
+      ../pkgs/anime/ani-cli.nix
       ../games
       ../games/steam
       ../games/minecraft
