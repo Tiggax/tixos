@@ -54,6 +54,9 @@
 
   fonts.packages = with pkgs; [
     nerdfonts
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
   ];
   
   # This value determines the NixOS release from which the default
