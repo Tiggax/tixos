@@ -17,6 +17,7 @@
       ../pkgs/anime/ani-cli.nix
       ../games
       ../games/steam
+      ../games/lutris
       ../games/minecraft
       ../printers/Firma
     ];
@@ -54,9 +55,6 @@
       gitui
       discord
       yazi
-      
-      lutris
-      steam
 
       popcorntime
       
@@ -70,6 +68,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     nushellFull
+    direnv
     helix
     git
     tree

@@ -19,7 +19,6 @@
 
     firefox
     discord
-    steam
     kate
   ];
   home.stateVersion = "23.05";
