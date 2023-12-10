@@ -55,6 +55,7 @@
       gitui
       discord
       yazi
+      bottom
 
       popcorntime
       
