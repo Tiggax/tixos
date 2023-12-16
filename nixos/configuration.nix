@@ -26,7 +26,7 @@
   networking.hostName = "tixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
  
-  boot.kernelPackages = pkgs.linuxPackages_6_5;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -38,7 +38,20 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   users.defaultUserShell = pkgs.nushell;
-
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+      fuse3
+      icu
+      zlib
+      nss
+      openssl
+      curl
+      expat
+    ];
+  };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tiggax = {
     isNormalUser = true;
