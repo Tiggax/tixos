@@ -2,19 +2,9 @@
 {
 
   imports = [
-    ../base.nix
-    ../../pkgs/kde.nix
-    ../../pkgs/helix.nix
-    ../../pkgs/nushell.nix
-    inputs.home-manager.nixosModules.home-manger
+    ./hardware-configuration.nix
+    ./tixie.nix
   ];
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      tiggax = import ./
-    };
-  };
- 
   
 }

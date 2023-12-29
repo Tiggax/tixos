@@ -7,11 +7,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       ../pkgs/kde.nix
       ../pkgs/blender-hip.nix
       # ../users/tiggax.nix
-      ../machines/pc/tixie.nix
+      ../machines/pc
       ../pkgs/openssh.nix
       ../pkgs/kdenlive.nix
       ../pkgs/anime/ani-cli.nix
