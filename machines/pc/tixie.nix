@@ -27,6 +27,7 @@
     };
   };
 networking = {
+  hostName = "tixos";
   nftables.enable = true;
   firewall = {
     enable = true;
@@ -34,5 +35,10 @@ networking = {
   };
 };
 
-boot.initrd.kernelModules = [ "amdgpu" ];
+boot = {
+  initrd.kernelModules = [ "amdgpu" ];
+  kernelPackages = pkgs.linuxPackages_latest;
+};
+
+
 }

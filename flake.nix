@@ -20,7 +20,9 @@
             specialArgs = { inherit system; };
             modules = [
               ./nixos/configuration.nix
-              ./machines/base.nix
+              ./machines/pc
+              # ./profiles/default
+             
               ({ pkgs, ... }: {
                 nixpkgs.overlays = [ rust-overlay.overlays.default ];
                 environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
