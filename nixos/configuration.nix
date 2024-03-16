@@ -68,7 +68,10 @@
       discord
       yazi
       bottom
-
+      wezterm
+      typst
+      typst-lsp
+      
       popcorntime
       
       nil
