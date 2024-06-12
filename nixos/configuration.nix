@@ -61,7 +61,7 @@
       firefox
       kate
       helix
-      nushellFull
+      nushell
       starship
       git
       gitui
