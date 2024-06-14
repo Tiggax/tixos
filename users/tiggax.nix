@@ -10,9 +10,10 @@
   };
   home.packages = with pkgs; [
     gitui
+    git
 
     helix
-    nushellFull
+    nushell
     starship
   
     nil

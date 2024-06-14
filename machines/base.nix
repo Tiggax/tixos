@@ -61,7 +61,7 @@
   ];
   
   environment.systemPackages = with pkgs; [
-    nushellFull
+    nushell
     direnv
     helix
     git
