@@ -2,10 +2,12 @@
 {
   imports = [./kdeconnect.nix];
 
-services.xserver = {
-  enable = true;
-  displayManager.sddm.enable = true;
-  desktopManager.plasma5.enable = true;
+services = {
+  xserver.enable = true;
+  displayManager = {
+    sddm.enable = true;
+    plasma5.enable = true;
+  };
 };
 
   sound.enable = true;

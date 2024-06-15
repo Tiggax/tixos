@@ -49,8 +49,10 @@
 
   services.printing.enable = true;
   services.xserver = {
-    layout = "si";
-    xkbVariant = "";
+    xkb = {
+      layout = "si";
+      variant = "";
+    };
   };
 
   fonts.packages = with pkgs; [
