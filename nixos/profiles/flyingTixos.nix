@@ -8,7 +8,9 @@
         ../development
         ../development/rust
         ../pkgs/nushell.nix
-    ]
+    ];
+
+    networking.hostName = "flyingTixos";
 
     programs.nix-ld = {
         enable = true;
