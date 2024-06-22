@@ -40,6 +40,7 @@
         specialArgs = { 
           inherit system; 
           inherit userSettings;
+          inherit <home-manager/nixos>;
         };
         modules = [
           ./machines/laptop
