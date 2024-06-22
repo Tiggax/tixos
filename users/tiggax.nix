@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 {
 
-  import = [
-    ../nushell.nix
-  ];
-
-
   home.username = "tiggax";
   home.homeDirectory = "/home/tiggax";
 
