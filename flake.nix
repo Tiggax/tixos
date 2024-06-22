@@ -38,7 +38,7 @@
 
       flyingTixos = nixpkgs.lib.nixosSystem {
         specialArgs = { 
-          inherit inputs system; 
+          inherit inputs system home-manager; 
           inherit userSettings;
         };
         modules = [
