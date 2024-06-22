@@ -8,6 +8,7 @@
     userName = "Tilen Gimpelj";
     userEmail = "66419530+Tiggax@users.noreply.github.com";
   };
+
   home.packages = with pkgs; [
     gitui
     git
@@ -21,6 +22,7 @@
     firefox
     discord
     kate
+    wezterm
   ];
   home.stateVersion = "23.05";
 

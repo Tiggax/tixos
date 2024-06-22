@@ -30,6 +30,21 @@
               }
             ];
           };
+
+          flyingTixos = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit system }
+
+            modules = [
+              ./machines/laptop
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.jdoe = import ./users/tiggax.nix;
+              }
+            ];
+          };
         };
           tixos = nixpkgs.lib.nixosSystem {
             specialArgs = { inherit system; };
