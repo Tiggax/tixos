@@ -13,7 +13,7 @@
       let
       system = "x86_64-linux"; 
       pkgs = import nixpkgs { inherit system; }; 
-      systemSettings = {
+      userSettings = {
         username = "tiggax";
       };
 
@@ -41,17 +41,17 @@
 
             modules = [
               ./machines/laptop
-              ./nixos/profiles/flyingTixos.nix { inherit systemSettings; }
+              ./nixos/profiles/flyingTixos.nix
 
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.${systemSettings.username} = import ./users/${systemSettings.username}.nix;
+                home-manager.users.${userSettings.username} = import ./users/${userSettings.username}.nix;
               }
             ];
             specialArgs = {
-              inherit systemSettings;
+              inherit userSettings;
             };
           };
         };

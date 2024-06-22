@@ -1,7 +1,7 @@
-{pkgs, systemSettings, ... }:
+{pkgs, ... }:
 {
 
-  home-manager.users.${systemSettings.username} = {pkgs, ...}:
+  home-manager.users.${userSettings.username} = {pkgs, ...}:
   
   {
     programs = {
