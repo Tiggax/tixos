@@ -10,65 +10,48 @@
   };
 
   outputs = inputs@{ nixpkgs, flake-parts, home-manager, ... }:
-      let
-      system = "x86_64-linux"; 
-      pkgs = import nixpkgs { inherit system; }; 
-      userSettings = {
-        username = "tiggax";
+  let
+    system = "x86_64-linux"; 
+    pkgs = import nixpkgs { inherit system; }; 
+    userSettings = {
+      username = "tiggax";
+    };
+
+  in
+  {
+    nixosConfigurations = {
+      tixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit system; };
+        modules = [
+          ./nixos/configuration.nix
+          ./machines/pc
+          # ./profiles/default
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.tiggax = import ./users/tiggax.nix;
+          }
+        ];
       };
 
-      in
-      {
-        nixosConfigurations = {
-          tixos = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit system; };
-            modules = [
-              ./nixos/configuration.nix
-              ./machines/pc
-              # ./profiles/default
+      flyingTixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit system; };
+        inherit userSettings;
+        modules = [
+          ./machines/laptop
+          ./nixos/profiles/flyingTixos.nix
+          <home-manager/nixos>
 
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.tiggax = import ./users/tiggax.nix;
-              }
-            ];
-          };
-
-          flyingTixos = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit system; };
-
-            modules = [
-              ./machines/laptop
-              ./nixos/profiles/flyingTixos.nix
-
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.${userSettings.username} = import ./users/${userSettings.username}.nix;
-              }
-            ];
-            specialArgs = {
-              inherit userSettings;
-            };
-          };
-        };
-          tixos = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit system; };
-            modules = [
-              ./nixos/configuration.nix
-              ./machines/pc
-              # ./profiles/default
-
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.tiggax = import ./users/tiggax.nix;
-              }
-            ];
-          };
-        };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${userSettings.username} = import ./users/${userSettings.username}.nix;
+          }
+        ];
+      };
+    };
+  };
 }
