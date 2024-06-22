@@ -49,7 +49,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${userSettings.username} = import ./users/tiggax.nix;
+            home-manager.users.${userSettings.username} = import ./users/tiggax/home.nix;
           }
         ];
       };
