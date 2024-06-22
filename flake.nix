@@ -45,8 +45,7 @@
           ./machines/laptop
           ./nixos/profiles/flyingTixos.nix
 
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${userSettings.username} = import ./users/tiggax.nix;
