@@ -46,22 +46,13 @@
           ./nixos/profiles/flyingTixos.nix
           # ./users/${userSettings.username}.nix
 
-          home-manager.nixosModules.home-manager
-        ];
-      };
-    };
-
-    homeConfigurations = {
-      ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.users.${userSettings.username} = import ./home-manager;
+            home-manager.extraSpecialArgs = {inherit userSettings; };
           }
         ];
-        extraSpecialArgs = {inherit userSettings; };
       };
     };
   };
