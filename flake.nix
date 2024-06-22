@@ -40,6 +40,7 @@
         specialArgs = { 
           inherit system; 
           inherit userSettings;
+          inherit home-manager;
         };
         modules = [
           ./machines/laptop
