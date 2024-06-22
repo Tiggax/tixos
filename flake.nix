@@ -37,8 +37,8 @@
       };
 
       flyingTixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system; };
-        extralSpecialArgs = {
+        specialArgs = { 
+          inherit system; 
           inherit userSettings;
         };
         modules = [
