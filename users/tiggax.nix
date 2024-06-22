@@ -2,7 +2,7 @@
 {
 
   import = [
-    ../pkgs/nushell.nix
+    ../nushell.nix
   ];
 
 
