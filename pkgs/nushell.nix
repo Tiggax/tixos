@@ -1,4 +1,4 @@
-{pkgs, userSettings, ... }:
+{pkgs, userSettings, home-manager, ... }:
 {
 
   home-manager.users.${userSettings.username} = {pkgs, ...}:
