@@ -32,7 +32,7 @@
           };
 
           flyingTixos = nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit system }
+            specialArgs = { inherit system; };
 
             modules = [
               ./machines/laptop
