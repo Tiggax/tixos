@@ -41,7 +41,7 @@
 
             modules = [
               ./machines/laptop
-              ./nixos/profiles/flyingTixos.nix
+              ./nixos/profiles/flyingTixos.nix { inherit systemSettings; }
 
               home-manager.nixosModules.home-manager
               {
