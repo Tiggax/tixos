@@ -44,11 +44,12 @@
         modules = [
           ./machines/laptop
           ./nixos/profiles/flyingTixos.nix
+          "./users/${userSettings.username}.nix"
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${userSettings.username} = import ./users/tiggax.nix;
+            home-manager.users.${userSettings.username} = import ./home-manager;
           }
         ];
       };
