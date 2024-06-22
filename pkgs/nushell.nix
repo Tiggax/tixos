@@ -19,9 +19,7 @@
   };
 
   environment.shells = pkgs.nushell;
-  users.defaultUserShell = {
-    shell = pkgs.nushell;
-  };
+  users.defaultUserShell = pkgs.nushell;
   
 
   environment.systemPackages = with pkgs; [
