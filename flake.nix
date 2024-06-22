@@ -13,6 +13,10 @@
       let
       system = "x86_64-linux"; 
       pkgs = import nixpkgs { inherit system; }; 
+      systemSettings = {
+        username = "tiggax";
+      };
+
       in
       {
         nixosConfigurations = {
@@ -43,7 +47,7 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.tiggax = import ./users/tiggax.nix;
+                home-manager.users.${systemSettings.username} = import ./users/${systemSettings.username}.nix;
               }
             ];
           };

@@ -7,6 +7,7 @@
         ../../printers/Firma
         ../../development
         ../../development/rust
+        ../../pkgs/nushell.nix
     ];
 
     networking.hostName = "flyingTixos";
