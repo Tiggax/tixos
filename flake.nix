@@ -38,7 +38,9 @@
 
       flyingTixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit system; };
-        inherit userSettings;
+        extralSpecialArgs = {
+          inherit userSettings;
+        };
         modules = [
           ./machines/laptop
           ./nixos/profiles/flyingTixos.nix
