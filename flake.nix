@@ -46,6 +46,7 @@
           ./nixos/profiles/flyingTixos.nix
           # ./users/${userSettings.username}.nix
 
+          home-manager.nixosModules.home-manager
         ];
       };
     };
