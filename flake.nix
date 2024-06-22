@@ -44,8 +44,7 @@
         modules = [
           ./machines/laptop
           ./nixos/profiles/flyingTixos.nix
-          <home-manager/nixos>
-
+          
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
