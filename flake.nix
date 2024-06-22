@@ -44,6 +44,7 @@
         modules = [
           ./machines/laptop
           ./nixos/profiles/flyingTixos.nix
+          ./home-manager
           # ./users/${userSettings.username}.nix
 
           home-manager.nixosModules.home-manager {
