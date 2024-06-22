@@ -26,4 +26,30 @@
     ];
   };
 
+  users.users.${userSettings.username} = {
+    isNormalUser = true;
+    description = "Tilen Gimpelj";
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.nushell;
+    packages = with pkgs; [
+      firefox
+      kate
+      helix
+      nushell
+      starship
+      git
+      gitui
+      discord
+      yazi
+      bottom
+      wezterm
+      typst
+      typst-lsp
+      
+      popcorntime
+      telegram-desktop
+      
+      nil
+    ];
+  };
 }
