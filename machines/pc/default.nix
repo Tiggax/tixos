@@ -3,6 +3,7 @@
 
   imports = [
     ../base.nix
+    ./hardware-configuration.nix
     ./tixie.nix
   ];
 
