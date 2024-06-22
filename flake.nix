@@ -50,6 +50,9 @@
                 home-manager.users.${systemSettings.username} = import ./users/${systemSettings.username}.nix;
               }
             ];
+            specialArgs = {
+              inherit systemSettings;
+            };
           };
         };
           tixos = nixpkgs.lib.nixosSystem {
