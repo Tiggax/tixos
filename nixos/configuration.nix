@@ -73,6 +73,7 @@
       typst-lsp
       
       popcorntime
+      telegram-desktop
       
       nil
     #  thunderbird
