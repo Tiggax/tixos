@@ -12,7 +12,8 @@
   outputs = inputs@{ nixpkgs, flake-parts, home-manager, ... }:
       let
       system = "x86_64-linux"; 
-      pkgs = import nixpkgs { inherit system; }; in
+      pkgs = import nixpkgs { inherit system; }; 
+      in
       {
         nixosConfigurations = {
           tixos = nixpkgs.lib.nixosSystem {
@@ -41,7 +42,7 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.jdoe = import ./users/tiggax.nix;
+                home-manager.users.tiggax = import ./users/tiggax.nix;
               }
             ];
           };
