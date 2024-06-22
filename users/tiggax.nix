@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 {
+
+  import = [
+    ../pkgs/nushell.nix
+  ];
+
+
   home.username = "tiggax";
   home.homeDirectory = "/home/tiggax";
 
@@ -8,6 +14,8 @@
     userName = "Tilen Gimpelj";
     userEmail = "66419530+Tiggax@users.noreply.github.com";
   };
+
+  
 
   home.packages = with pkgs; [
     gitui
