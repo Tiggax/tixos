@@ -38,8 +38,7 @@
 
       flyingTixos = nixpkgs.lib.nixosSystem {
         specialArgs = { 
-          inherit inputs;
-          inherit system; 
+          inherit inputs system; 
           inherit userSettings;
         };
         modules = [
@@ -48,12 +47,6 @@
           ./home-manager
           # ./users/${userSettings.username}.nix
 
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${userSettings.username} = import ./home-manager;
-            home-manager.extraSpecialArgs = {inherit userSettings; };
-          }
         ];
       };
     };
