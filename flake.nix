@@ -21,18 +21,17 @@
   {
     nixosConfigurations = {
       tixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system; };
+        specialArgs = { 
+          inherit inputs system; 
+          inherit userSettings;
+        };
         modules = [
           ./nixos/configuration.nix
           ./machines/pc
-          # ./profiles/default
+          ./users/${userSettings.username}.nix
 
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.tiggax = import ./users/tiggax.nix;
-          }
+          ./home-manager
         ];
       };
 
@@ -47,27 +46,7 @@
           ./users/${userSettings.username}.nix
 
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${userSettings.username} = {
-              home.username = userSettings.username;
-              home.homeDirectory = "/home/${userSettings.username}";
-              
-              home.packages = with pkgs; [
-                gitui
-                git
-
-                helix
-              
-                nil
-
-              ];
-              home.stateVersion = "24.05";
-
-              programs.home-manager.enable = true;
-            };
-          }
+          ./home-manager
 
         ];
       };

@@ -2,6 +2,8 @@
 {
 
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     extraSpecialArgs = { inherit inputs userSettings; };
     users.${userSettings.username} = {
       home.username = userSettings.username;
