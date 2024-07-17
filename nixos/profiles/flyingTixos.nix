@@ -8,6 +8,7 @@
         ../../development
         ../../development/rust
         ../../pkgs/nushell.nix
+        ../../games/steam
     ];
 
     networking.hostName = "flyingTixos";
