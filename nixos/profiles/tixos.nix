@@ -5,7 +5,6 @@
     [ # Include the results of the hardware scan.
       ../../pkgs/kde.nix
       ../../pkgs/blender-hip.nix
-      # ../../users/tiggax.nix
       ../../machines/pc
       ../../pkgs/openssh.nix
       ../../pkgs/kdenlive.nix
