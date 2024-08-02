@@ -26,8 +26,8 @@
           inherit userSettings;
         };
         modules = [
-          ./nixos/configuration.nix
           ./machines/pc
+          ./nixos/profiles/tixos.nix
           ./users/${userSettings.username}.nix
 
           home-manager.nixosModules.home-manager

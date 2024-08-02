@@ -48,6 +48,7 @@
       
       popcorntime
       telegram-desktop
+      thunderbird
       
       nil
     ];
