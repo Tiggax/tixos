@@ -45,6 +45,8 @@
       wezterm
       typst
       typst-lsp
+
+      krita
       
       popcorntime
       telegram-desktop
