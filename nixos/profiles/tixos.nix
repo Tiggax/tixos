@@ -9,6 +9,7 @@
       ../../pkgs/openssh.nix
       ../../pkgs/kdenlive.nix
       ../../pkgs/anime/ani-cli.nix
+      ../../pkgs/mysql.nix
       ../../games
       ../../games/steam
       ../../games/lutris
