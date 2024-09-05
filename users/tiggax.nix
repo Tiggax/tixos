@@ -20,7 +20,7 @@
       nil
 
       firefox
-      discord
+      vesktop
       kate
       wezterm
     ];
@@ -39,7 +39,7 @@
       starship
       git
       gitui
-      discord
+      vesktop
       yazi
       bottom
       wezterm
