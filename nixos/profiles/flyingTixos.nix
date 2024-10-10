@@ -2,12 +2,13 @@
 
 {
     imports = [
-        ../../pkgs/kde.nix
-        ../../pkgs/anime/ani-cli.nix
+        ../../machines/laptop
+        #../../pkgs/kde.nix
+        #../../pkgs/anime/ani-cli.nix
         ../../printers/Firma
         ../../development
         ../../development/rust
-        ../../pkgs/nushell.nix
+        #../../pkgs/nushell.nix
         ../../games/steam
     ];
 
