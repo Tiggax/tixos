@@ -6,12 +6,13 @@
         ../../pkgs/anime/ani-cli.nix
         ../../printers/Firma
         ../../development
-        ../../development/rust
         ../../pkgs/nushell.nix
         ../../games/steam
     ];
 
     networking.hostName = "flyingTixos";
+
+    development.enable = true;
 
     programs.nix-ld = {
         enable = true;

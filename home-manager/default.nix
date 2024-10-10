@@ -5,6 +5,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs userSettings; };
+    backupFileExtension = "ohm";
     users.${userSettings.username} = {
       home.username = userSettings.username;
       home.homeDirectory = "/home/${userSettings.username}";
