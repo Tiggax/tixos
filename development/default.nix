@@ -1,8 +1,31 @@
-{config, pkgs, ...}: 
-
+{pkgs, config, lib, ...}: 
+let
+    cfg = config.development;
+in
 {
-    environment.systemPackages = with pkgs; [
-        telegram-desktop
+    imports = [
+        ./rust
+        ./rstudio
     ];
+
+    options.development = {
+        enable = lib.mkEnableOption "Enable Development";
+    };
+
+    config = lib.mkIf cfg.enable {
+
+        development = {
+            rstudio.enable = lib.mkDefault true;
+            rust.enable = lib.mkDefault true;
+        };
+
+        
+        environment.systemPackages = with pkgs; [
+            telegram-desktop
+        ];
+
+    };
+
+    
 
 }
