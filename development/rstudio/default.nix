@@ -11,15 +11,20 @@ in
             example = [pkgs.rPackages.tidyverse];
             description = "Additional packages to install";
         };
+        knitrSupport = lib.mkEnableOption "Enable Knitr support";
     };
 
+
+
     config = lib.mkIf cfg.enable {
-        environment.systemPackages = with pkgs; with rPackages;[
-            rstudio
 
-            # Packages
-            tidyverse
+        environment.systemPackages = with pkgs;[
 
-        ] ++ cfg.additionalPackages;
+            (rstudioWrapper.override { packages = with pkgs.rPackages; [tidyverse] ++ cfg.additionalPackages ++ (if cfg.knitrSupport then [pandoc] else []); })
+
+        ] ++ (if cfg.knitrSupport then [pkgs.texlive.combined.scheme-full] else []);
+
+
+
     };
 }
