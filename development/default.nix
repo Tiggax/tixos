@@ -16,6 +16,7 @@ in
 
         development = {
             rstudio.enable = lib.mkDefault true;
+            rstudio.knitrSupport.enable = lib.mkDefault true;
             rust.enable = lib.mkDefault true;
         };
 
