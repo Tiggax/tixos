@@ -15,10 +15,15 @@
       ../../games/lutris
       ../../games/minecraft
       ../../printers/Firma
+      ../../development
     ];
 
     networking.hostName = "tixos";
     users.defaultUserShell = pkgs.nushell;
+
+    development.enable = true;
+
+
     programs.nix-ld = {
         enable = true;
         libraries = with pkgs; [
