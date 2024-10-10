@@ -6,7 +6,7 @@ in
     options.development.rstudio = {
         enable = lib.mkEnableOption "Enable RStudio";
         additionalPackages = lib.mkOption {
-            type = lib.types.listOf types.package;
+            type = lib.types.listOf lib.types.package;
             default = [];
             example = [pkgs.rPackages.tidyverse];
             description = "Additional packages to install";

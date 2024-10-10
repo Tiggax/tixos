@@ -3,7 +3,7 @@ let
   cfg = config.development.rust;
 in
 {
-  option.development.rust = {
+  options.development.rust = {
     enable = lib.mkEnableOption "Enable Rust Dev";
   };
 
