@@ -22,7 +22,7 @@ in
 
         environment.systemPackages = with pkgs;[
 
-            (rstudioWrapper.override { packages = with pkgs.rPackages; [tidyverse] ++ cfg.additionalPackages ++ (if cfg.knitrSupport.enable then [pandoc] else []); })
+            (rstudioWrapper.override { packages = with pkgs.rPackages; [tidyverse bio3d] ++ cfg.additionalPackages ++ (if cfg.knitrSupport.enable then [pandoc] else []); })
 
         ] ++ (if cfg.knitrSupport.enable then [pkgs.texlive.combined.scheme-full] else []);
 
