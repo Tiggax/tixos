@@ -13,6 +13,7 @@
     networking.hostName = "flyingTixos";
 
     development.enable = true;
+    development.rstudio.additionalPackages = [ uniprotR bio3d ];
 
     programs.nix-ld = {
         enable = true;
