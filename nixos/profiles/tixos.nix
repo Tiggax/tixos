@@ -14,7 +14,13 @@
 
     networking.hostName = "tixos";
     
-    mymod.kde.desktop.enable = true;
+    mymod = {
+      kde.desktop.enable = true;
+      anime.enable = true;
+      mysql.enable = true;
+      openssh.enable = true;
+
+    };
 
     programs.nix-ld = {
         enable = true;

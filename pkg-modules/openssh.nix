@@ -1,9 +1,9 @@
 { pkgs, lib, config, ... }:
 let
-  cfg = config.openssh;
+  cfg = config.mymod.openssh;
 in
 {
-  options.openssh = {
+  options.mymod.openssh = {
     enable = lib.mkEnableOption "Enable OpenSSH";
     ports = lib.mkOption {
       type = lib.types.listOf lib.types.port;

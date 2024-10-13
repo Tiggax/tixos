@@ -2,17 +2,17 @@
 
 {
     imports = [
+        ../../pkg-modules
         ../../machines/laptop
-        #../../pkgs/kde.nix
-        #../../pkgs/anime/ani-cli.nix
         ../../printers/Firma
         ../../development
         ../../development/rust
-        #../../pkgs/nushell.nix
         ../../games/steam
     ];
 
     networking.hostName = "flyingTixos";
+
+    mymod.kde.desktop.enable = true;
 
     programs.nix-ld = {
         enable = true;
