@@ -1,9 +1,9 @@
 { pkgs, lib, config, ... }:
 let 
-  cfg = config.kdeconnect;
+  cfg = config.mymod.kde.kdeconnect;
 in 
 {
-  options.kdeconnect = {
+  options.mymod.kde.kdeconnect = {
     enable = lib.mkEnableOption "Enable KDE Connect";
   };
 

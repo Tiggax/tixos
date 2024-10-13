@@ -5,11 +5,6 @@
     [ # Include the results of the hardware scan.
       ../../machines/pc
       ../../pkg-modules
-      # ../../pkgs/kde.nix
-      # ../../pkgs/blender-hip.nix
-      # ../../pkgs/kdenlive.nix
-      # ../../pkgs/anime/ani-cli.nix
-      # ../../pkgs/mysql.nix
       ../../games
       ../../games/steam
       ../../games/lutris
@@ -19,7 +14,7 @@
 
     networking.hostName = "tixos";
     
-    kde.desktop.enable = true;
+    mymod.kde.desktop.enable = true;
 
     programs.nix-ld = {
         enable = true;
