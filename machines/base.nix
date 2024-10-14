@@ -13,8 +13,10 @@
       options = "--delete-older-than 30d";
     };
   };
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = _: true;
+  };
   boot = {
      loader = {
       systemd-boot = {
