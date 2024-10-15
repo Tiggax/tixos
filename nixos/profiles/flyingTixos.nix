@@ -13,6 +13,11 @@
     networking.hostName = "flyingTixos";
 
     mymod.kde.desktop.enable = true;
+    development.enable = true;
+    development.rstudio.additionalPackages = with pkgs; with rPackages;[ 
+        #UniprotR 
+        bio3d 
+    ];
 
     programs.nix-ld = {
         enable = true;

@@ -10,10 +10,11 @@
       ../../games/lutris
       ../../games/minecraft
       ../../printers/Firma
+      ../../development
     ];
 
     networking.hostName = "tixos";
-    
+
     mymod = {
       kde.desktop.enable = true;
       anime.enable = true;
@@ -21,6 +22,8 @@
       openssh.enable = true;
 
     };
+    
+    development.enable = true;
 
     programs.nix-ld = {
         enable = true;
