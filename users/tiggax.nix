@@ -1,6 +1,11 @@
 { config, pkgs, userSettings, home-manager, ... }:
 {
 
+  imports = [
+    ../pkg-modules
+  ];
+
+
   home-manager.users.${userSettings.username} = {pkgs, ...}:
   
   {
@@ -14,8 +19,6 @@
       git
 
       helix
-      nushell
-      starship
     
       nil
 
@@ -30,13 +33,10 @@
     isNormalUser = true;
     description = "Tilen Gimpelj";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.nushell;
     packages = with pkgs; [
       firefox
       kate
       helix
-      nushell
-      starship
       git
       gitui
       vesktop

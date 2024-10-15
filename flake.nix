@@ -26,7 +26,6 @@
           inherit userSettings;
         };
         modules = [
-          ./machines/pc
           ./nixos/profiles/tixos.nix
           ./users/${userSettings.username}.nix
 
@@ -41,7 +40,6 @@
           inherit userSettings;
         };
         modules = [
-          ./machines/laptop
           ./nixos/profiles/flyingTixos.nix
           ./users/${userSettings.username}.nix
 
