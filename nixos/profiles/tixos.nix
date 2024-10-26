@@ -3,13 +3,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../../pkgs/kde.nix
-      ../../pkgs/blender-hip.nix
       ../../machines/pc
-      ../../pkgs/openssh.nix
-      ../../pkgs/kdenlive.nix
-      ../../pkgs/anime/ani-cli.nix
-      ../../pkgs/mysql.nix
+      ../../pkg-modules
       ../../games
       ../../games/steam
       ../../games/lutris
@@ -19,10 +14,16 @@
     ];
 
     networking.hostName = "tixos";
-    users.defaultUserShell = pkgs.nushell;
 
+    mymod = {
+      kde.desktop.enable = true;
+      anime.enable = true;
+      mysql.enable = true;
+      openssh.enable = true;
+
+    };
+    
     development.enable = true;
-
 
     programs.nix-ld = {
         enable = true;
