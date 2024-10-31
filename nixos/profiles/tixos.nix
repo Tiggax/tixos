@@ -23,7 +23,15 @@
 
     };
     
-    development.enable = true;
+    development = {
+      enable = true;
+      rstudio = {
+        additionalPackages = with pkgs.rPackages; [
+          gt
+          gtExtras
+        ];
+      };
+    };
 
     programs.nix-ld = {
         enable = true;
