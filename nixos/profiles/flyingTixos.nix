@@ -2,16 +2,17 @@
 
 {
     imports = [
-        ../../pkgs/kde.nix
-        ../../pkgs/anime/ani-cli.nix
+        ../../pkg-modules
+        ../../machines/laptop
         ../../printers/Firma
         ../../development
-        ../../pkgs/nushell.nix
+        ../../development/rust
         ../../games/steam
     ];
 
     networking.hostName = "flyingTixos";
 
+    mymod.kde.desktop.enable = true;
     development.enable = true;
     development.rstudio.additionalPackages = with pkgs; with rPackages;[ 
         #UniprotR 
