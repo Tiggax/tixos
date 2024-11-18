@@ -21,6 +21,16 @@
       mysql.enable = true;
       openssh.enable = true;
 
+      modeling = {
+        enable = true;
+        blender.enable = true;
+
+        printing = {
+          enable = true;
+          lychee.enable = true;
+        };
+      };
+
     };
     
     development = {
