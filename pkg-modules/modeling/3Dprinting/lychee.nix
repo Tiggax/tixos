@@ -1,7 +1,7 @@
 { appimageTools, fetchurl, ... }:
 let
   pname = "lycheeslicer";
-  version = "7.1.1";
+  version = "7.1.2";
 
   name = "${pname}-${version}";
 
