@@ -7,7 +7,7 @@ let
 
   src = fetchurl {
     url = "https://mango-lychee.nyc3.digitaloceanspaces.com/LycheeSlicer-${version}.AppImage";
-    sha256 = "sha256-3UEih6i/JkBOCDJ78bkQ3nJ8P07fZCy0a4/t6yGXChA=";
+    sha256 = "sha256-/hpM1/OzjLWssKJL6p3olWS2qNi5AhVYi7ycK8OF4rU=";
   };
   
   desktopFile = ''
