@@ -1,13 +1,11 @@
 { appimageTools, fetchurl, ... }:
 let
   pname = "lycheeslicer";
-  version = "7.1.2";
-
-  name = "${pname}-${version}";
+  version = "7.2.0";
 
   src = fetchurl {
     url = "https://mango-lychee.nyc3.digitaloceanspaces.com/LycheeSlicer-${version}.AppImage";
-    sha256 = "sha256-/hpM1/OzjLWssKJL6p3olWS2qNi5AhVYi7ycK8OF4rU=";
+    sha256 = "sha256-ZGNTEWGrmrzHmFijDaAizuxfhHW7k+ReoTrG4mGEcog=";
   };
   
   desktopFile = ''
@@ -22,12 +20,12 @@ let
     Categories=Graphics;3DGraphics;
   '';
 
-  appimageContents = appimageTools.extractType2 { inherit name src; };
+  appimageContents = appimageTools.extractType2 { inherit pname version src; };
 in
 appimageTools.wrapType2 {
   inherit pname version src;
 
-  extraPkgs = pkgs: [];
+  extraPkgs = pkgs: with pkgs;[ xorg.libxshmfence ];
 
   extraInstallCommands = ''
     mkdir -p $out/share/applications
