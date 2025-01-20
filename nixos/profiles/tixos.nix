@@ -39,6 +39,7 @@
         additionalPackages = with pkgs.rPackages; [
           gt
           gtExtras
+          rstatix
         ];
       };
     };

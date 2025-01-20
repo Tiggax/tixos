@@ -58,7 +58,9 @@
   };
 
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts.noto
+    nerd-fonts.hack
+    nerd-fonts.meslo-lg
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji

@@ -3,11 +3,11 @@
         ./anime
         ./kde
         ./mysql.nix
-        ./nushell.nix
+        ./nushell
         ./openssh.nix
         ./modeling
     ];
     
-    nushell.enable = lib.mkDefault true;
+    mymod.nushell.enable = lib.mkDefault true;
 
 }
