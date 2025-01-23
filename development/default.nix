@@ -6,6 +6,7 @@ in
     imports = [
         ./rust
         ./rstudio
+        ./java
     ];
 
     options.development = {

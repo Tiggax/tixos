@@ -42,6 +42,9 @@
           rstatix
         ];
       };
+      java = {
+        enable = true;
+      };
     };
 
     programs.nix-ld = {
