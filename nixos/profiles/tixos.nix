@@ -40,6 +40,9 @@
           gt
           gtExtras
           rstatix
+          devtools
+          pak
+          ggimage
         ];
       };
       java = {
