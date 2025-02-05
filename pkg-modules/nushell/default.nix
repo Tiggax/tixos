@@ -46,6 +46,7 @@ in
                 use git-completions.nu *
                 use typst-completions.nu *
                 use nix-completions.nu *
+                use ssh-completions.nu *
                 '';
               };
 
