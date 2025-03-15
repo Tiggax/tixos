@@ -24,7 +24,7 @@
 
       firefox
       vesktop
-      kate
+      kdePackages.kate
       wezterm
     ];
   };
@@ -35,7 +35,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      kate
+      kdePackages.kate
       helix
       git
       gitui
