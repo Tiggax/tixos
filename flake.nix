@@ -7,9 +7,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # ZZZ brainrot
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    aagl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, flake-parts, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, flake-parts, home-manager, aagl, ... }:
   let
     system = "x86_64-linux"; 
     pkgs = import nixpkgs { inherit system; }; 
@@ -28,7 +32,6 @@
         modules = [
           ./nixos/profiles/tixos.nix
           ./users/${userSettings.username}.nix
-
           home-manager.nixosModules.home-manager
           ./home-manager
         ];

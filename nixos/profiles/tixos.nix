@@ -31,6 +31,12 @@
         };
       };
 
+      games = {
+        sleepy-launcher.enable = true;
+      };
+      
+
+
     };
     
     development = {
