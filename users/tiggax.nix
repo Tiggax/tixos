@@ -44,7 +44,7 @@
       bottom
       wezterm
       typst
-      typst-lsp
+      tinymist
 
       krita
       
