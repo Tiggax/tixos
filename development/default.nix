@@ -7,6 +7,8 @@ in
         ./rust
         ./rstudio
         ./java
+
+        ./markdown.nix
     ];
 
     options.development = {
@@ -19,6 +21,8 @@ in
             rstudio.enable = lib.mkDefault true;
             rstudio.knitrSupport.enable = lib.mkDefault true;
             rust.enable = lib.mkDefault true;
+
+            markdown.enable = lib.mkDefault true;
         };
 
         
