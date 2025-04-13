@@ -1,8 +1,14 @@
 { pkgs, ... }: {
 	environment.systemPackages = with pkgs; [
-		lutris
-		gamescope
-		winetricks
-		wineWowPackages.stable
+		(lutris.override {
+			extraPkgs = pkgs: [
+				gamescope
+				winetricks
+				wineWowPackages.stable
+			];
+			extraLibraries = pkgs: [
+				
+			];
+		})
 	];
 }
