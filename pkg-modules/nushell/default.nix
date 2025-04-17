@@ -63,7 +63,7 @@ in
                   ]
                   $env.PATH = ($env.PATH | split row (char esep) 
                     | prepend '/opt/miniconda3/bin'
-                    | prepend "/home/tiggax/.cargo/bin"
+                    | prepend "/home/${userSettings.username}/.cargo/bin"
                   )
 
                   $env.NU_LOG_LEVEL = "DEBUG"
