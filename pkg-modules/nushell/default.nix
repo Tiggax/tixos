@@ -20,24 +20,30 @@ in
           programs = {
             nushell = {
               enable = true;
+
+              settings = {
+                show_banner = false;
+                float_precision = 4;
+                completions = {
+                  algorithm = "fuzzy";
+                };
+                history = {
+                  file_format = "sqlite";
+                };
+                buffer_editor = "hx";
+                render_right_prompt_on_last_line = true;
+                cursor_shape = {
+                  emacs = "line";
+                  vi_insert = "block";
+                  vi_normal = "underscore";
+                };
+                datetime_format = {
+                  normal = "%a, %d %b %Y %H:%M:%S %z";
+                  table = "%d/%m/%y %I:%M:%S%p";
+                };
+              };
               configFile = {
                 text = ''
-                $env.config.show_banner = false
-                $env.config.float_precision = 4
-                $env.config.completions.algorithm = "fuzzy"
-                $env.config.history.file_format = "sqlite"
-                $env.config.buffer_editor = "hx"
-                $env.config.render_right_prompt_on_last_line = true
-                $env.config.cursor_shape = {
-                  emacs : "line"
-                  vi_insert : "block"
-                  vi_normal : "underscore"
-                }
-                $env.config.datetime_format = {
-                  normal : "%a, %d %b %Y %H:%M:%S %z"
-                  table : "%d/%m/%y %I:%M:%S%p"
-                }
-
                 # MODULES
 
                 use Starship.nu
