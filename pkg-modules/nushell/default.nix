@@ -66,7 +66,11 @@ in
 
                 '';
               };
-              
+            plugins = with pkgs.nushellPlugins; [
+              query
+              polars
+              units
+            ]; 
               
             };
             starship = {
