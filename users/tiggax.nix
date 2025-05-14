@@ -49,6 +49,7 @@
       krita
       
       popcorntime
+      element-desktop
       telegram-desktop
       thunderbird
       
