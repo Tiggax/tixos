@@ -34,6 +34,7 @@ in
 
     environment.systemPackages = with pkgs;[
       sshguard
+      waypipe # FOR WAYLAND REMOTE FORWARDING
     ];
   };
 }
