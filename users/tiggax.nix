@@ -50,8 +50,11 @@
       
       popcorntime
       element-desktop
+
+      # Faculty items
       telegram-desktop
       thunderbird
+      zotero
       
       nil
     ];

@@ -21,6 +21,8 @@
       mysql.enable = true;
       openssh.enable = true;
 
+      obs.enable =  true;
+
       modeling = {
         enable = true;
         blender.enable = true;
