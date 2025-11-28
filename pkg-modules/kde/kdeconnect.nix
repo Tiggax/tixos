@@ -10,7 +10,7 @@ in
   config =  lib.mkIf cfg.enable {
     programs.kdeconnect.enable = true;
     environment.systemPackages = with pkgs; [
-      libsForQt5.kdeconnect-kde
+      kdePackages.kdeconnect-kde
     ];
   };
   

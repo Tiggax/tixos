@@ -1,11 +1,11 @@
 { appimageTools, fetchurl, ... }:
 let
   pname = "lycheeslicer";
-  version = "7.4.1";
+  version = "7.5.0";
 
   src = fetchurl {
     url = "https://mango-lychee.nyc3.digitaloceanspaces.com/LycheeSlicer-${version}.AppImage";
-    sha256 = "sha256-SO3o0kJwHSVxwv0VjeCVRbvyqR07IAAs1Wm29R1lfLA=";
+    sha256 = "sha256-jI/V8tczgBHl3/LOEui+DbjWB5kD67+mL2HMvPz80+8=";
   };
   
   desktopFile = ''
