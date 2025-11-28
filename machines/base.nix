@@ -75,6 +75,7 @@
     mpv
     nil
     winbox4 # For router access
+    onlyoffice-desktopeditors # MIKROSoft support
   ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
