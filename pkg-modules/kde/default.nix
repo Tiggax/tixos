@@ -18,6 +18,12 @@ in
             kdeconnect.enable = true;
             desktop.enable = true;
         };
+        environment.systemPackages = with pkgs.kdePackages; [
+            partitionmanager
+            filelight
+            kcolorchooser
+        ];
+
     };
     
 }
