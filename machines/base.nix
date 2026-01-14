@@ -28,7 +28,14 @@
     };
     supportedFilesystems = ["ntfs"];
   };
+
+  zramSwap = {
+    enable = true;
+  };
+  
   networking.networkmanager.enable = true;
+  services.flatpak.enable = true;
+
 
   time.timeZone = "Europe/Ljubljana";
   

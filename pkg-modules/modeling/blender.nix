@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs;[
-      (if (cfg.hip) then blender-hip else blender)
+      (blender.override {rocmSupport = cfg.hip;})
     ];
   };
 }

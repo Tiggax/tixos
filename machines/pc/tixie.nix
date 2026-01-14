@@ -11,12 +11,18 @@
     };
   };
 
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 8*1024;
+  }];
+
   # Logitech G502 X mouse config
   environment.systemPackages = with pkgs; [
     solaar 
     piper
   ];
   hardware = {
+    amdgpu.opencl.enable = true;
     logitech.wireless = {
       enable = true;
       enableGraphical = true;

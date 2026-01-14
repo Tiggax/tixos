@@ -16,7 +16,7 @@
     networking.hostName = "tixos";
 
     mymod = {
-      kde.desktop.enable = true;
+      kde.enable = true;
       anime.enable = true;
       mysql.enable = true;
       openssh.enable = true;
@@ -45,8 +45,8 @@
       enable = true;
       rstudio = {
         additionalPackages = with pkgs.rPackages; [
-          gt
-          gtExtras
+          # gt # broken as of late
+          # gtExtras # -//-
           rstatix
           devtools
           pak
