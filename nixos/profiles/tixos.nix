@@ -30,6 +30,8 @@
         printing = {
           enable = true;
           lychee.enable = true;
+          snorca.enable = true;
+          orca-slicer.enable = true;
         };
       };
 
