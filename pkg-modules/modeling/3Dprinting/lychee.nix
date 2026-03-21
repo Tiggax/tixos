@@ -25,7 +25,7 @@ in
 appimageTools.wrapType2 {
   inherit pname version src;
 
-  extraPkgs = pkgs: with pkgs;[ xorg.libxshmfence ];
+  extraPkgs = pkgs: with pkgs;[ libxshmfence ];
 
   extraInstallCommands = ''
     mkdir -p $out/share/applications

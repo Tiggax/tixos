@@ -4,7 +4,7 @@
 			extraPkgs = pkgs: [
 				gamescope
 				winetricks
-				wineWowPackages.stable
+				wineWow64Packages.stable
 			];
 			extraLibraries = pkgs: [
 				
