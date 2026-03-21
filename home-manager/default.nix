@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, userSettings, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
 {
 
   home-manager = {
@@ -9,13 +15,13 @@
     users.${userSettings.username} = {
       home.username = userSettings.username;
       home.homeDirectory = "/home/${userSettings.username}";
-      
+
       home.packages = with pkgs; [
         gitui
         git
 
         helix
-      
+
         nil
 
       ];

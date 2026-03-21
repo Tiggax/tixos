@@ -1,7 +1,12 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.mymod.kde.kdenlive;
-in 
+in
 {
   options.mymod.kde.kdenlive = {
     enable = lib.mkEnableOption "Enable KDEnLive";

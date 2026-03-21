@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.mymod.openssh;
 in
@@ -11,7 +16,7 @@ in
       example = [ 22 ];
       description = "List of ports for ssh to use";
     };
-      
+
   };
 
   config = lib.mkIf cfg.enable {
@@ -32,7 +37,7 @@ in
       };
     };
 
-    environment.systemPackages = with pkgs;[
+    environment.systemPackages = with pkgs; [
       sshguard
       waypipe # FOR WAYLAND REMOTE FORWARDING
     ];

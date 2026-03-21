@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.mymod.modeling.blender;
 in
@@ -14,8 +19,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs;[
-      (blender.override {rocmSupport = cfg.hip;})
+    environment.systemPackages = with pkgs; [
+      (blender.override { rocmSupport = cfg.hip; })
     ];
   };
 }

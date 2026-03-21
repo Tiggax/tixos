@@ -1,40 +1,49 @@
-{ config, pkgs, userSettings, home-manager, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  home-manager,
+  ...
+}:
 {
 
   imports = [
     ../pkg-modules
   ];
 
+  home-manager.users.${userSettings.username} =
+    { pkgs, ... }:
 
-  home-manager.users.${userSettings.username} = {pkgs, ...}:
-  
-  {
-    programs.git = {
-      enable = true;
-      settings.user = {
-        name = "Tilen Gimpelj";
-        email = "66419530+Tiggax@users.noreply.github.com";
+    {
+      programs.git = {
+        enable = true;
+        settings.user = {
+          name = "Tilen Gimpelj";
+          email = "66419530+Tiggax@users.noreply.github.com";
+        };
       };
+      home.packages = with pkgs; [
+        gitui
+        git
+
+        helix
+
+        nil
+
+        firefox
+        vesktop
+        kdePackages.kate
+        wezterm
+      ];
     };
-    home.packages = with pkgs; [
-      gitui
-      git
-
-      helix
-    
-      nil
-
-      firefox
-      vesktop
-      kdePackages.kate
-      wezterm
-    ];
-  };
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = "Tilen Gimpelj";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       firefox
       kdePackages.kate
@@ -49,7 +58,7 @@
       tinymist
 
       krita
-      
+
       popcorntime
       element-desktop
 
@@ -57,7 +66,7 @@
       telegram-desktop
       thunderbird
       zotero
-      
+
       nil
     ];
   };

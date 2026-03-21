@@ -1,4 +1,9 @@
-{ inputs, lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
 
   imports = [
@@ -7,5 +12,4 @@
     ./flyingTixos.nix
   ];
 
-  
 }

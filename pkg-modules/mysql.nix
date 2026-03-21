@@ -1,16 +1,21 @@
-{pkgs, lib, config, ...}: 
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
-    cfg = config.mymod.mysql;
+  cfg = config.mymod.mysql;
 in
 {
-    options.mymod.mysql = {
-        enable = lib.mkEnableOption "Enable MySQeeL server";
-    };
+  options.mymod.mysql = {
+    enable = lib.mkEnableOption "Enable MySQeeL server";
+  };
 
-    config = lib.mkIf cfg.enable {
-        services.mysql = {
-            enable = true;
-            package = pkgs.mysql84;
-        };
+  config = lib.mkIf cfg.enable {
+    services.mysql = {
+      enable = true;
+      package = pkgs.mysql84;
     };
+  };
 }

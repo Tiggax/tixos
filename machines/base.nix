@@ -1,8 +1,16 @@
-{ inputs, lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       # creates links between same files, reduces space :)
       auto-optimise-store = true;
     };
@@ -18,21 +26,21 @@
     allowUnfreePredicate = _: true;
   };
   boot = {
-     loader = {
+    loader = {
       systemd-boot = {
         enable = true;
         configurationLimit = 5;
       };
-      
+
       efi.canTouchEfiVariables = true;
     };
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = [ "ntfs" ];
   };
 
   zramSwap = {
     enable = true;
   };
-  
+
   networking.networkmanager = {
     enable = true;
     plugins = with pkgs; [
@@ -41,9 +49,8 @@
   };
   services.flatpak.enable = true;
 
-
   time.timeZone = "Europe/Ljubljana";
-  
+
   i18n = {
     defaultLocale = "en_GB.UTF-8";
     extraLocaleSettings = {
@@ -55,8 +62,8 @@
       LC_NUMERIC = "sl_SI.UTF-8";
       LC_PAPER = "sl_SI.UTF-8";
       LC_TELEPHONE = "sl_SI.UTF-8";
-      LC_TIME = "sl_SI.UTF-8";    
-      };
+      LC_TIME = "sl_SI.UTF-8";
+    };
   };
 
   console.keyMap = "slovene";
@@ -77,7 +84,7 @@
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
   ];
-  
+
   environment.systemPackages = with pkgs; [
     nushell
     direnv

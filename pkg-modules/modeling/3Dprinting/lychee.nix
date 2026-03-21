@@ -7,7 +7,7 @@ let
     url = "https://mango-lychee.nyc3.digitaloceanspaces.com/LycheeSlicer-${version}.AppImage";
     sha256 = "sha256-649Lf6bh1Saee0NrHZ+wqoOUgpy4lxMD2DV7lh6ZNik=";
   };
-  
+
   desktopFile = ''
     [Desktop Entry]
     Name=Lychee Slicer
@@ -25,7 +25,7 @@ in
 appimageTools.wrapType2 {
   inherit pname version src;
 
-  extraPkgs = pkgs: with pkgs;[ libxshmfence ];
+  extraPkgs = pkgs: with pkgs; [ libxshmfence ];
 
   extraInstallCommands = ''
     mkdir -p $out/share/applications
@@ -34,12 +34,11 @@ appimageTools.wrapType2 {
     cp -r ${appimageContents}/usr/share/icons $out/share/icons
   '';
 
-    
   meta = {
     description = "Lychee Slicer is a powerful and user-friendly slicing software created to simplify your 3D printing experience. Compatible with over 750 printers, our slicer fits the needs of both beginners and advanced users.";
     homepage = "https://lychee.mango3d.io/resin-sla-msla-3d-printers";
     downloadPage = "https://lychee.mango3d.io/download-lychee-slicer";
-    platforms = ["x86_64-linux"];
+    platforms = [ "x86_64-linux" ];
   };
-  
+
 }

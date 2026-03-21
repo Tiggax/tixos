@@ -1,4 +1,10 @@
-{ appimageTools, fetchurl, makeDesktopItem, pkgs, ... }:
+{
+  appimageTools,
+  fetchurl,
+  makeDesktopItem,
+  pkgs,
+  ...
+}:
 let
   pname = "snapmaker-orca";
   version = "2.2.4";
@@ -25,29 +31,36 @@ let
       "application/prs.wavefront-obj"
       "application/x-amf"
     ];
-    categories = ["Utility" "Graphics" "3DGraphics" "X-3DPrinting" "X-Modeling"];
+    categories = [
+      "Utility"
+      "Graphics"
+      "3DGraphics"
+      "X-3DPrinting"
+      "X-Modeling"
+    ];
   };
 
-  appimageContents = appimageTools.extractType2 { inherit pname version src;};
+  appimageContents = appimageTools.extractType2 { inherit pname version src; };
 
 in
-  appimageTools.wrapType2 {
-    inherit pname version src;
+appimageTools.wrapType2 {
+  inherit pname version src;
 
-    extraPkgs = pkgs: with pkgs; [
+  extraPkgs =
+    pkgs: with pkgs; [
       webkitgtk_4_1
     ];
 
-    meta = {
-      description = "SnapMaker Orca slicer fork designed specificaly for the SnapMaker U1 3d printer";
-      homepage = "https://www.snapmaker.com/snapmaker-orca";
-      downloadPage = "https://github.com/Snapmaker/OrcaSlicer/releases/latest";
-      platforms = ["x86_64-linux"];
-    };
-  
-    extraInstallCommands = ''
+  meta = {
+    description = "SnapMaker Orca slicer fork designed specificaly for the SnapMaker U1 3d printer";
+    homepage = "https://www.snapmaker.com/snapmaker-orca";
+    downloadPage = "https://github.com/Snapmaker/OrcaSlicer/releases/latest";
+    platforms = [ "x86_64-linux" ];
+  };
+
+  extraInstallCommands = ''
     mkdir -p $out/share
     cp -r ${appimageContents}/usr/share/icons $out/share/icons
     install -Dm444 ${desktopItem}/share/applications/${pname}.desktop $out/share/applications/${pname}.desktop
-    '';
-  }
+  '';
+}

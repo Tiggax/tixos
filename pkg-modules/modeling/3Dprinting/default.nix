@@ -1,7 +1,12 @@
-{ pkgs, lib, config, ...}:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.mymod.modeling.printing;
-in 
+in
 {
   imports = [ ];
 
@@ -18,17 +23,18 @@ in
     };
   };
 
-  config = 
-  let 
-    lychee = pkgs.callPackage ./lychee.nix {};
-    snorca = pkgs.callPackage ./snorca.nix {};
-  in lib.mkIf cfg.enable {
-      
+  config =
+    let
+      lychee = pkgs.callPackage ./lychee.nix { };
+      snorca = pkgs.callPackage ./snorca.nix { };
+    in
+    lib.mkIf cfg.enable {
+
       environment.systemPackages = with pkgs; [
         (if cfg.lychee.enable then lychee else null)
         (if cfg.snorca.enable then snorca else null)
         (if cfg.orca-slicer.enable then orca-slicer else null)
       ];
-  };
-  
+    };
+
 }

@@ -1,40 +1,42 @@
-{pkgs, config, lib, ...}: 
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
-    cfg = config.development;
+  cfg = config.development;
 in
 {
-    imports = [
-        ./rust
-        ./rstudio
-        ./java
-        ./helix.nix
+  imports = [
+    ./rust
+    ./rstudio
+    ./java
+    ./helix.nix
 
-        ./markdown.nix
+    ./markdown.nix
+  ];
+
+  options.development = {
+    enable = lib.mkEnableOption "Enable Development";
+  };
+
+  config = lib.mkIf cfg.enable {
+
+    development = {
+      rstudio.enable = lib.mkDefault true;
+      rstudio.knitrSupport.enable = lib.mkDefault true;
+      rust.enable = lib.mkDefault true;
+      helix.enable = lib.mkDefault true;
+
+      markdown.enable = lib.mkDefault true;
+    };
+
+    environment.systemPackages = with pkgs; [
+      telegram-desktop
+      vscode
     ];
 
-    options.development = {
-        enable = lib.mkEnableOption "Enable Development";
-    };
-
-    config = lib.mkIf cfg.enable {
-
-        development = {
-            rstudio.enable = lib.mkDefault true;
-            rstudio.knitrSupport.enable = lib.mkDefault true;
-            rust.enable = lib.mkDefault true;
-            helix.enable = lib.mkDefault true;
-
-            markdown.enable = lib.mkDefault true;
-        };
-
-        
-        environment.systemPackages = with pkgs; [
-            telegram-desktop
-            vscode
-        ];
-
-    };
-
-    
+  };
 
 }

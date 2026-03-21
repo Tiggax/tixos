@@ -1,10 +1,10 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     gamemode
   ];
 
   programs.gamemode = {
-    enable = true;   
+    enable = true;
   };
 }

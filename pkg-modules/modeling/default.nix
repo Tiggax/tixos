@@ -1,7 +1,12 @@
-{pkgs, lib, config, ...}:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.mymod.modeling;
-in 
+in
 {
   imports = [
     ./blender.nix
@@ -11,7 +16,7 @@ in
 
   options.mymod.modeling = {
     enable = lib.mkEnableOption "Enable Modeling packages";
-    
+
   };
 
   config = lib.mkIf cfg.enable {
@@ -24,5 +29,5 @@ in
       };
     };
   };
-  
+
 }

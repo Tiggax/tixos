@@ -1,13 +1,18 @@
-{pkgs, lib, config, ...}: 
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.mymod.modeling.freecad;
 in
 {
-  imports = [];
+  imports = [ ];
 
   options.mymod.modeling.freecad = {
     enable = lib.mkEnableOption "Enable FreeCAD";
-    
+
   };
 
   config = lib.mkIf cfg.enable {

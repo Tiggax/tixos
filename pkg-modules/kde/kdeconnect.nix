@@ -1,17 +1,22 @@
-{ pkgs, lib, config, ... }:
-let 
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
   cfg = config.mymod.kde.kdeconnect;
-in 
+in
 {
   options.mymod.kde.kdeconnect = {
     enable = lib.mkEnableOption "Enable KDE Connect";
   };
 
-  config =  lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     programs.kdeconnect.enable = true;
     environment.systemPackages = with pkgs; [
       kdePackages.kdeconnect-kde
     ];
   };
-  
+
 }

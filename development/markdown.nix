@@ -1,17 +1,23 @@
-
-{pkgs, lib, config, userSettings, home-manager, ...}:
+{
+  pkgs,
+  lib,
+  config,
+  userSettings,
+  home-manager,
+  ...
+}:
 let
-    cfg = config.development.markdown;
+  cfg = config.development.markdown;
 in
 {
-    options.development.markdown = {
-      enable = lib.mkEnableOption "Enable Markdown development";
-    };
+  options.development.markdown = {
+    enable = lib.mkEnableOption "Enable Markdown development";
+  };
 
-    config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
 
-      environment.systemPackages = with pkgs;[
-        marksman
-      ];
-    };
+    environment.systemPackages = with pkgs; [
+      marksman
+    ];
+  };
 }

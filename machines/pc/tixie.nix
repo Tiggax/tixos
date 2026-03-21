@@ -11,14 +11,16 @@
     };
   };
 
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   # Logitech G502 X mouse config
   environment.systemPackages = with pkgs; [
-    solaar 
+    solaar
     piper
   ];
   hardware = {
@@ -37,19 +39,22 @@
       };
     };
   };
-networking = {
-  hostName = "tixos";
-  nftables.enable = true;
-  firewall = {
-    enable = true;
-    allowedTCPPorts = [80 505 34025];
+  networking = {
+    hostName = "tixos";
+    nftables.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80
+        505
+        34025
+      ];
+    };
   };
-};
 
-boot = {
-  initrd.kernelModules = [ "amdgpu" ];
-  kernelPackages = pkgs.linuxPackages_latest;
-};
-
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
 }
