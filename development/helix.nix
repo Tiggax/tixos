@@ -1,0 +1,189 @@
+
+{pkgs, lib, config, userSettings, ...}:
+let
+    cfg = config.development.helix;
+in
+{
+    options.development.helix = {
+        enable = lib.mkEnableOption "Enable Helix Editor";
+    };
+
+
+
+    config = lib.mkIf cfg.enable {
+				environment.systemPackages = with pkgs; [
+					helix
+					nixfmt
+				];
+
+				home-manager.users.${userSettings.username} = {
+					programs.helix = {
+						enable = true;
+						defaultEditor = true;
+						settings = {
+							theme = "my_bogster";
+							editor = {
+								line-number = "relative";
+								cursorline = true;
+								color-modes = true;
+
+								cursor-shape = {
+									insert = "bar";
+									normal = "block";
+									select = "underline";
+								};
+
+								file-picker = {
+									hidden = false;
+								};
+
+								statusline = {
+									left = ["mode" "spinner"];
+									center = ["version-control" "separator" "file-name"];
+									right = ["diagnostics" "selections" "position" "file-encoding" "file-line-ending" "file-type"];
+									separator = " ➤";
+								};
+
+								lsp.display-inlay-hints = true;
+								soft-wrap.enable = true;
+							};
+
+							keys.normal = {
+								space.w = ":w";
+								space.q = ":q";
+							};
+							keys.normal."A-m"	= [
+							  "open_below"
+							  "append_mode"
+							  ":insert-output printf '|> '"
+							  "move_char_right"
+							];
+							keys.insert."A-m"	= [
+							  "open_below"
+							  "append_mode"
+							  ":insert-output printf '|> '"
+							  "move_char_right"
+							];
+						};
+
+						languages = {
+							language = [
+								{
+									name = "nix";
+									auto-format = true;
+									formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+								}
+							];			
+						};
+
+
+						
+						themes = {
+							"my_bogster" = let
+									bogster-yellow = "#dcb659";
+									bogster-lblue = "#59dcd8";
+									bogster-teal = "#59dcb7";
+									bogster-blue = "#36b2d4";
+									bogster-orange = "#dc7759";
+									bogster-red = "#d32c5d";
+									bogster-lgreen = "#7fdc59";
+									bogster-lred = "#dc597f";
+									bogster-purp = "#b759dc";
+
+									bogster-base0 = "#13181e";
+									bogster-base1 = "#161c23";
+									bogster-base2 = "#232d38";
+									bogster-base3 = "#313f4e";
+									bogster-base4 = "#415367";
+									bogster-base5 = "#abb2bf";
+
+									bogster-fg0 = "#c6b8ad";
+									bogster-fg1 = "#e5ded6";
+								in {
+									"attribute" = bogster-orange;
+									"keyword" = {fg = bogster-yellow; modifiers = ["bold"];};
+									"keyword.directive" = bogster-yellow;
+									"namespace" = bogster-red;
+									"punctuation" = bogster-orange;
+									"punctuation.delimiter" = bogster-orange;
+									"operator" = { fg = bogster-orange; modifiers = ["bold"];};
+									"special" = bogster-lgreen;
+									"variable.other.member" = bogster-fg0;
+									"variable" = bogster-fg0;
+									"variable.parameter" = bogster-fg0;
+									"type" = bogster-lred;
+									"type.builtin" = {fg = bogster-red; modifiers = ["bold"];};
+									"constructor" = bogster-lred;
+									"function" = bogster-lblue;
+									"function.macro" = {fg = bogster-orange; modifiers = ["bold"];};
+									"function.builtin" = {fg = bogster-lblue; modifiers = ["bold"];};
+									"comment" = bogster-base5;
+									"variable.builtin" = bogster-fg0;
+									"constant" = bogster-teal;
+									"constant.builtin" = bogster-teal;
+									
+									"string" = bogster-teal;
+									"constant.numeric" = bogster-blue;
+									"constant.character.escape" = { fg = bogster-lgreen; modifiers = ["bold"]; };
+									"label" = bogster-blue;
+									"module" = bogster-red;
+
+									"markup.heading" = bogster-blue;
+									"markup.list" = bogster-red;
+									"markup.bold" = { fg = bogster-yellow; modifiers = ["bold"]; };
+									"markup.italic" = { fg = bogster-purp; modifiers = ["italic"]; };
+									"markup.link.url" = { fg = bogster-yellow; modifiers = ["underlined"]; };
+									"markup.link.text" = bogster-red;
+									"markup.quote" = bogster-teal;
+									"markup.raw" = bogster-lgreen;
+
+									"diff.plus" = bogster-teal;
+									"diff.delta" = bogster-orange;
+									"diff.minus" = bogster-lred;
+
+									"ui.background" = { bg = bogster-base1; };
+									"ui.linenr" = { fg = bogster-base4; };
+									"ui.linenr.selected" = { fg = bogster-fg1; };
+									"ui.cursorline" = { bg = bogster-base0; };
+									"ui.statusline" = { fg = bogster-fg1; bg = bogster-base2; };
+									"ui.statusline.inactive" = { fg = bogster-fg0; bg = bogster-base2; };
+									"ui.popup" = { bg = bogster-base2; };
+									"ui.window" = { bg = bogster-base2; };
+									"ui.help" = { bg = bogster-base2; fg = bogster-fg1; };
+
+									"ui.statusline.normal" = { fg = bogster-base1; bg = bogster-blue; modifiers = [ "bold" ];};
+									"ui.statusline.insert" = { fg = bogster-base1; bg = bogster-lgreen; modifiers = [ "bold" ];};
+									"ui.statusline.select" = { fg = bogster-base1; bg = bogster-red; modifiers = [ "bold" ]; };
+
+									"ui.text" = { fg = bogster-fg1; };
+									"ui.text.focus" = { fg = bogster-fg1; modifiers= ["bold"]; };
+									"ui.virtual.whitespace" = bogster-base5;
+									"ui.virtual.ruler" = { bg = bogster-base0; };
+
+									"ui.selection" = { bg = bogster-base3; };
+									"ui.selection.primary" = { bg = bogster-base4; modifiers = ["dim"]; };
+									"ui.cursor.match" = { fg = bogster-base3; bg = bogster-orange; };
+									"ui.cursor" = { fg = bogster-base5; modifiers = ["reversed"]; };
+									"ui.cursor.primary" = { fg = bogster-teal; modifiers = ["reversed"]; };
+
+									"ui.menu" = { fg = bogster-fg1; bg = bogster-base2; };
+									"ui.menu.selected" = { bg = bogster-base3; };
+
+									"warning" = bogster-orange;
+									"error" = bogster-lred;
+									"info" = bogster-teal;
+									"hint" = bogster-blue;
+
+									# make diagnostic underlined, to distinguish with selection text.
+									diagnostic = { modifiers = ["underlined"]; };
+									
+
+ 								
+							};
+						};
+					};
+				};
+
+
+    };
+}

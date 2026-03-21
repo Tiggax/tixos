@@ -7,6 +7,7 @@ in
         ./rust
         ./rstudio
         ./java
+        ./helix.nix
 
         ./markdown.nix
     ];
@@ -21,6 +22,7 @@ in
             rstudio.enable = lib.mkDefault true;
             rstudio.knitrSupport.enable = lib.mkDefault true;
             rust.enable = lib.mkDefault true;
+            helix.enable = lib.mkDefault true;
 
             markdown.enable = lib.mkDefault true;
         };

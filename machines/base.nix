@@ -86,6 +86,8 @@
     tree
     mpv
     nil
+    nixfmt
+    nixd
     winbox4 # For router access
     onlyoffice-desktopeditors # MIKROSoft support
   ];
