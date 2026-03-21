@@ -61,6 +61,8 @@ in
               separator = " ➤";
             };
 
+            end-of-line-diagnostics = "hint";
+            inline-diagnostics.cursor-line = "error";
             lsp.display-inlay-hints = true;
             soft-wrap.enable = true;
           };
@@ -93,7 +95,7 @@ in
             {
               name = "gleam";
               auto-format = true;
-              formatter.command = "${pkgs.gleam}/bin/gleam";
+              formatter.command = "${pkgs.gleam}/bin/gleam format";
             }
           ];
         };
