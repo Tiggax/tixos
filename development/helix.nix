@@ -90,6 +90,11 @@ in
               auto-format = true;
               formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
             }
+            {
+              name = "gleam";
+              auto-format = true;
+              formatter.command = "${pkgs.gleam}/bin/gleam";
+            }
           ];
         };
 
