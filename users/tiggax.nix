@@ -17,6 +17,7 @@
     {
       programs.git = {
         enable = true;
+        signing.format = null;
         settings.user = {
           name = "Tilen Gimpelj";
           email = "66419530+Tiggax@users.noreply.github.com";

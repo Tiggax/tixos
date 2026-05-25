@@ -7,7 +7,6 @@
     ../../pkg-modules
     ../../games
     ../../games/steam
-    ../../games/lutris
     ../../games/minecraft
     ../../printers/Firma
     ../../development
