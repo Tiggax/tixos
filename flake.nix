@@ -58,6 +58,20 @@
 
           ];
         };
+
+        # ISO minimal version
+        miniTixos = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs system;
+            inherit userSettings;
+          };
+          modules = [
+            ./nixos/profiles/miniTixos.nix
+            ./users/${userSettings.username}.nix
+            home-manager.nixosModules.home-manager
+            ./home-manager
+          ];
+        };
       };
     };
 }
