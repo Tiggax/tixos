@@ -34,6 +34,7 @@
 
       efi.canTouchEfiVariables = true;
     };
+    zfs.forceImportRoot = false; # made default true in 26.11
     supportedFilesystems = [ "ntfs" ];
   };
 
