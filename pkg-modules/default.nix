@@ -14,6 +14,7 @@
     ./modeling
     ./games
     ./obs.nix
+    ./qbittorrent.nix
   ];
 
   mymod.nushell.enable = lib.mkDefault true;

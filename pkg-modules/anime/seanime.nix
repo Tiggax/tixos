@@ -21,27 +21,35 @@ in
       default = pkgs.seanime;
       description = "Seanime package.";
     };
+
+    torrents = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      seanime
+    environment.systemPackages = [
+      cfg.package
     ];
 
-    systemd.services.seanime = {
-      description = "SaAnime";
+    systemd.user.services.seanime = {
+      description = "SeAnime Server instance";
 
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = [ "default.target" ];
       after = [ "network.target" ];
       serviceConfig = {
-        User = "${userSettings.username}";
+        User = userSettings.username;
         Group = "users";
-        ExecStart = "${cfg.package}/bin/seanime";
 
+        ExecStart = "${cfg.package}/bin/seanime";
         Restart = "always";
 
       };
+      path = (with pkgs; [ mpv ]);
     };
+
+    mymod.qbittorrent.enable = lib.mkIf cfg.torrents true;
   };
 
 }
