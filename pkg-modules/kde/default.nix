@@ -20,8 +20,9 @@ in
 
   config = lib.mkIf cfg.enable {
     mymod.kde = {
-      kdeconnect.enable = true;
-      desktop.enable = true;
+      kdeconnect.enable = lib.mkDefault true;
+      desktop.enable = lib.mkDefault true;
+      desktop.bigscreen = lib.mkDefault true;
     };
     environment.systemPackages = with pkgs.kdePackages; [
       partitionmanager

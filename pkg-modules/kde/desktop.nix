@@ -11,6 +11,7 @@ in
   imports = [ ./kdeconnect.nix ];
   options.mymod.kde.desktop = {
     enable = lib.mkEnableOption "Enable KDE Desktop";
+    bigscreen = lib.mkEnableOption "Enable Bigscreen";
 
   };
 
@@ -35,6 +36,10 @@ in
     };
 
     security.rtkit.enable = true;
-  };
 
+    environment.systemPackages = lib.mkIf cfg.bigscreen [
+      pkgs.kdePackages.plasma-bigscreen
+    ];
+
+  };
 }
