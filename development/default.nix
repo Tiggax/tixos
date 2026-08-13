@@ -34,7 +34,8 @@ in
 
     environment.systemPackages = with pkgs; [
       telegram-desktop
-      vscode
+      vscodium
+      devenv
     ];
 
   };
