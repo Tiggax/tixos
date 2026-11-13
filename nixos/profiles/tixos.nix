@@ -22,6 +22,8 @@
 
     obs.enable = true;
 
+    virt.enable = true;
+
     modeling = {
       enable = true;
       blender.enable = true;
@@ -36,6 +38,7 @@
 
     games = {
       sleepy-launcher.enable = true;
+      lutris.enable = true;
     };
 
   };
