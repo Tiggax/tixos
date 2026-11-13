@@ -27,6 +27,8 @@ in
           nushell = {
             enable = true;
 
+            loadSessionVariables = true;
+
             settings = {
               show_banner = false;
               float_precision = 4;

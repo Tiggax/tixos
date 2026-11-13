@@ -60,7 +60,6 @@
 
       krita
 
-      popcorntime
       element-desktop
 
       # Faculty items
