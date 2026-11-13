@@ -10,6 +10,8 @@
       enable = true;
       drivers = with pkgs; [
         foomatic-db-ppds
+        cups-filters
+        cups-browsed
       ];
     };
   };
