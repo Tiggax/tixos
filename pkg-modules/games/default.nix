@@ -10,6 +10,7 @@ in
 {
   imports = [
     ./sleepy-launcher.nix
+    ./lutris.nix
   ];
 
   options.mymod.games = {
@@ -20,6 +21,7 @@ in
 
     mymod.games = {
       sleepy-launcher.enable = lib.mkDefault true;
+      lutris.enable = lib.mkDefault true;
     };
   };
 }
